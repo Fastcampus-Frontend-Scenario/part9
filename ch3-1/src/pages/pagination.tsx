@@ -1,34 +1,20 @@
 import { fetchProducts } from "@/api/products"
 import { ProductComponent } from "@/componenets/Product"
+import { Product } from "@/types/types"
 import styled from "@emotion/styled"
-import { Skeleton } from "@mui/material"
-import { QueryClient, dehydrate, useQuery } from "@tanstack/react-query"
-import { useState } from "react"
-
-export async function getServerSideProps() {
-    const queryClient = new QueryClient()
-
-    await queryClient.prefetchQuery(['products'], () => fetchProducts())
-    
-    return {
-        props: {
-            dehydratedState: dehydrate(queryClient)
-        }
-    }
-}
+import { useEffect, useState } from "react"
 
 const PaginationComponent: React.FC = () => {
-    const [pageOffset, setPageOffset] = useState(1)
-    const { data, isSuccess, isLoading, isFetching } = useQuery({
-        queryKey: ['products', pageOffset],
-        queryFn: () => fetchProducts(),
-        staleTime: 1000 * 60 * 60 * 24 // 24hr
+    const [data, setData] = useState<Array<Product> | null>(null)
+
+    useEffect(()=> {
+        fetchProducts().then((res) => setData(res.products))
     })
 
     return (
         <Container>
             <ProductListContainer>
-                {data?.products.map(product => <ProductComponent key={product.id} {...product}/>)}
+                {data?.map(product => <ProductComponent key={product.id} {...product}/>)}
             </ProductListContainer>
         </Container>
     )
