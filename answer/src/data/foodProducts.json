@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "title": "Cake",
+        "price": 59.95,
+        "description": "Mint choco cake",
+        "image": "/images/cake.webp",
+        "rating": {
+            "rate": 1.5,
+            "count": 5
+        },
+        "expDate": "2023-12-25"
+    },
+    {
+        "id": 2,
+        "title": "HotDog",
+        "price": 9.99,
+        "description": "Basic Hotdog, nobody likes this",
+        "image": "/images/hotdog.jpeg",
+        "rating": {
+            "rate": 1.5,
+            "count": 5
+        },
+        "expDate": "2023-12-25"
+    },
+    {
+        "id": 3,
+        "title": "Salad",
+        "price": 13.59,
+        "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+        "category": "men's clothing",
+        "image": "/images/salad.jpeg",
+        "rating": {
+            "rate": 4.7,
+            "count": 500
+        },
+        "expDate": "2023-12-25"
+    }
+]

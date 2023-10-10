@@ -4,7 +4,7 @@ import { Product } from "@/types/types"
 import styled from "@emotion/styled"
 import { useEffect, useState } from "react"
 
-const PaginationComponent: React.FC = () => {
+const Products: React.FC = () => {
     const [data, setData] = useState<Array<Product> | null>(null)
 
     useEffect(()=> {
@@ -31,4 +31,4 @@ const ProductListContainer = styled.div({
     display: "flex",
     flexDirection: 'row',
 })
-export default PaginationComponent
+export default Products

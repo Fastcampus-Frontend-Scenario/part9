@@ -5,10 +5,9 @@ type ProductRating = {
 
 export interface Product {
     id: number
-    name: string
+    title: string
     price: number
     description: string
-    discount: number
     image: string
     rating: ProductRating
 }
@@ -19,4 +18,19 @@ export type FoodProduct = Product & {
 
 export type GroceryProduct = Product & {
     category: string
+}
+
+type ResultType = 'OK' | 'ERROR'
+
+export type ProductResponse<T> = {
+    result: ResultType
+    data?: {
+        items: Array<T>
+    }
+    message?: string
+}
+
+export interface IProductAPI<T> {
+    getProduct(productId: string): Promise<T>
+    getProducts(): Promise<Array<T>>
 }
