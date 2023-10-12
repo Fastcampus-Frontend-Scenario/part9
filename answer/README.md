@@ -12,13 +12,15 @@ DI를 활용한 컴포넌트 재사용로직 구현
 
 Products를 받아오는 API 를 활용한 /products page 구현
 
-- parameter에 따라 FoodProduct list 혹은 GroceryProduct를 rendering
+- query parameter에 따라 FoodProduct list 혹은 GroceryProduct를 rendering
 - 해당 동작을 테스트 해 볼 수 있도록 MSW 를 이용
 
 /products 페이지를 확장해서 FoodProduct와 GroceryProduct를 렌더링 하도록 분기
 
-- `/products-new` route 로 구현
-- DI를 이용해서 Products component를 재사용
+- `/products` route 로 구현
+  - `/products?type=grocery` : 그로서리 제품들 리스트업
+  - `/products?type=food`: 푸드 제품들 리스트 업
+- DI를 이용해서 Products component를 구현
 
 ## API
 
